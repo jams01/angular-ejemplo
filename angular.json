@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,12 +96,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "07618cd9-b797-4fa0-ae89-b6efc9dfbcea"
   }
 }

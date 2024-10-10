@@ -1,0 +1,36 @@
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <h2>Login Form</h2>
+        
+        <!-- Form Template -->
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+          
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">user:</label>
+            <input type="text" id="email" class="form-control" name="email" ngModel required >
+            <div *ngIf="loginForm.submitted && loginForm.controls['email']?.invalid">
+              <small *ngIf="loginForm.controls['email']?.errors?.['required']" class="text-danger">Email is required.</small>
+              <small *ngIf="loginForm.controls['email']?.errors?.['email']" class="text-danger">Please enter a valid email address.</small>
+            </div>
+          </div>
+          
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control" name="password" ngModel minlength="6" required>
+            <div *ngIf="loginForm.submitted && loginForm.controls['password']?.invalid">
+              <small *ngIf="loginForm.controls['password']?.errors?.['required']" class="text-danger">Password is required.</small>
+              <small *ngIf="loginForm.controls['password']?.errors?.['minlength']" class="text-danger">Password must be at least 6 characters long.</small>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+        
+        </form>
+        
+        <!-- Form Output for Debugging -->
+        <pre>{{ loginForm.value | json }}</pre>
+      </div>
+</section>
